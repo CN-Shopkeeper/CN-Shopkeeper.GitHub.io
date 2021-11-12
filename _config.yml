@@ -4,7 +4,7 @@ show_downloads: true
 google_analytics:
 theme: jekyll-theme-midnight
 
-url: https://cn-shopkeeper.github.io/
+url: https://cn-shopkeeper.github.io
 
 remote_theme: pages-themes/midnight@v0.2.0
 plugins:
