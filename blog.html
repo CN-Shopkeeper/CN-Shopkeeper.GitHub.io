@@ -14,11 +14,13 @@ title: Blog
 </ul>
 
 <h1>Categories</h1>
-<div id="categories">
+<ul>
   {% for category in site.categories %}
+  <li>
     {% assign cat4url = category[0] | remove:' ' | downcase %}
     <a class="categories-item" href="/categories/{{cat4url}}">
       {{category[0]}}
     </a>
+  </li>
   {% endfor %}
-  </div>
+</ul>
