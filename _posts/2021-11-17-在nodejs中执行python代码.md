@@ -1,6 +1,7 @@
 ---
 layout: post
 author: shopkeeper
+categories: nodejs
 ---
 &emsp;&emsp;在CardiacKeeper这个项目中，NLPServer部署了一个Koa2的应用服务器，用于接收前端的QA请求或解析文章关键字请求，需要运行python代码。本篇博客用于记录我在nodejs中执行python的解决方案。
 

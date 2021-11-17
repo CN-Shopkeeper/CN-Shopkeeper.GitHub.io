@@ -3,12 +3,22 @@ layout: default
 title: Blog
 ---
 <h1>Latest Posts</h1>
-
 <ul>
-  {% for post in site.posts %}
-    <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
-    </li>
+  <!-- 限制最多显示10篇最新文章 -->
+  {% for post in site.posts limit:2%}
+  <li>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    {{ post.excerpt }}
+  </li>
   {% endfor %}
 </ul>
+
+<h1>Categories</h1>
+<div id="categories">
+  {% for category in site.categories %}
+    {% assign cat4url = category[0] | remove:' ' | downcase %}
+    <a class="categories-item" href="/categories/{{cat4url}}">
+      {{category[0]}}
+    </a>
+  {% endfor %}
+  </div>
