@@ -1,8 +1,9 @@
-nav {
-  a {
+.my-nav{
+  a{
     font-size: 30px;
+    margin-right:10px;
+    .current {
+      color: green;
+    }
   }
-}
-.current {
-  color: green;
 }
