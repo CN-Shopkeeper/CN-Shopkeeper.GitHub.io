@@ -24,7 +24,10 @@ categories: mongodb
 
 3. 停止服务`sudo systemctl stop mongod`。
 
-4. 重启服务`sudo systemctl restart mongod`。
+4. 重启服务`sudo systemctl restart mongod`。若重启服务时报错，可以尝试以下指令
+```shell
+sudo chown mongod:mongod /tmp/mongodb-27017.sock
+```
 
 连接MongoDB时，可以使用`mongosh`指令来直接连接并进入默认的test数据库。也可以使用`mongo`并可以在后面加上自定义参数。现以`mongo`为例，进入后创建root账号：
 
@@ -92,4 +95,11 @@ mongodb://root:*****@<your ip here>/?authSource=admin&readPreference=primary&app
 
 ## mongoose连接数据库
 
-最终我还是需要使用mongoose来连接数据库并进行增删改查的，此内容待实际使用时再完成。
+最终我还是需要使用mongoose来连接数据库并进行增删改查的，实际上和连接云数据库没有什么区别，只需要确认连接URL即可。
+
+连接URL格式为（[官方文档](https://docs.mongodb.com/manual/reference/connection-string/#connection-string-formats)）
+```
+mongodb://[username:password@]host1[:port1][,...hostN[:portN]][/[defaultauthdb][?options]]
+```
+
+其中URL的最后可以跟上一系列的参数，参数也可[参考文档](https://docs.mongodb.com/manual/reference/connection-string/#connection-string-options)。
