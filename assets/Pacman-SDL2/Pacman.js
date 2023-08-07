@@ -15,7 +15,7 @@
 var Module = typeof Module != 'undefined' ? Module : {};
 
 // * 定义jek路径前缀
-var basePath = "/assets/Pacman-SDL2";
+var basePath = "/assets/Pacman-SDL2/";
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
