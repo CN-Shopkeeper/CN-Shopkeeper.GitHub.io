@@ -14,6 +14,9 @@
 // can continue to use Module afterwards as well.
 var Module = typeof Module != 'undefined' ? Module : {};
 
+// * 定义jek路径前缀
+var basePath = "/assets/Pacman-SDL2";
+
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
 
@@ -34,8 +37,8 @@ var Module = typeof Module != 'undefined' ? Module : {};
         // web worker
         PACKAGE_PATH = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf('/')) + '/');
       }
-      var PACKAGE_NAME = 'Pacman.data';
-      var REMOTE_PACKAGE_BASE = 'Pacman.data';
+      var PACKAGE_NAME = basePath+'Pacman.data';
+      var REMOTE_PACKAGE_BASE = basePath+'Pacman.data';
       if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
         Module['locateFile'] = Module['locateFilePackage'];
         err('warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)');
@@ -195,7 +198,7 @@ Module['FS_createPath']("/resources", "font", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/resources/font/simsun.ttc", "start": 0, "end": 17909384}, {"filename": "/resources/tilesheet.bmp", "start": 17909384, "end": 17914814}], "remote_package_size": 17914814});
+    loadPackage({"files": [{"filename":basePath+ "/resources/font/simsun.ttc", "start": 0, "end": 17909384}, {"filename": basePath+"/resources/tilesheet.bmp", "start": 17909384, "end": 17914814}], "remote_package_size": 17914814});
 
   })();
 
@@ -895,7 +898,7 @@ function createExportWrapper(name) {
 // include: runtime_exceptions.js
 // end include: runtime_exceptions.js
 var wasmBinaryFile;
-  wasmBinaryFile = 'Pacman.wasm';
+  wasmBinaryFile = basePath+ 'Pacman.wasm';
   if (!isDataURI(wasmBinaryFile)) {
     wasmBinaryFile = locateFile(wasmBinaryFile);
   }
