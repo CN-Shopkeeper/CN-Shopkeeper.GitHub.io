@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 author: shopkeeper
 categories: projects
 ---
 
-{% include test.html %}
+{% include_relative Pacman-SDL2\Pacman.html %}
