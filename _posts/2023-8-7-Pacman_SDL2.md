@@ -6,7 +6,7 @@ categories: projects
 
 ### 基于 SDL2 的吃豆人游戏
 
-> :warning: ~~**该游戏的全部制作经验将被用于对《原神》的拙劣模仿！**~~
+> :warning: ~~**本游戏的全部售卖收入将用于充值原神！**~~
 
 [点击跳转](https://cn-shopkeeper.github.io/Projects/Pacman-SDL2/Pacman.html)
 
