@@ -10,7 +10,7 @@ categories: projects
 
 [项目主页](https://github.com/CN-Shopkeeper/pacman-SDL2)，如果你喜欢[这个项目](https://github.com/CN-Shopkeeper/pacman-SDL2)，请给一个 star。
 
-[点击跳转](https://cn-shopkeeper.github.io/Projects/Pacman-SDL2/Pacman.html)
+在线试玩请[点击跳转](https://cn-shopkeeper.github.io/Projects/Pacman-SDL2/Pacman.html)，注意，这个游戏需要键盘输入，目前只支持桌面端。
 
 如果上述链接无法访问或加载，可以尝试[这个链接](http://146.56.248.15/games/pacman/)。注意，这个链接可能会失效。
 
@@ -20,21 +20,56 @@ categories: projects
 
 如果不通过 Emscripten 编译，只是在本地运行，则不会受到影响。本地文件是 Stand Alone 的。
 
-## 一些功能
+## 游戏规则
 
-1. 墙体碰撞监测
+复现雅达利的经典游戏 "吃豆人"（Pac-Man）。游戏的目标是控制一个叫做 "吃豆人"的角色，吃掉游戏迷宫中的所有小豆子，同时避开四只追逐着吃豆人的鬼魂。以下是游戏的主要规则：
 
-2. 移动意图
+1. 角色控制： 玩家控制的角色是一个呈现为一个圆形的 "吃豆人"（Pac-Man）。玩家可以使用键盘上的 WSAD 键来控制吃豆人的移动方向：上、下、左、右。
 
-3. 随机创造地图(R)
+2. 迷宫： 游戏迷宫由一个迷宫地图组成，其中包含许多小豆子和其他特殊物体。
 
-4. 四种 Ghost 的 AI。7 秒分散模式，20 秒追逐模式
+3. 小豆子和能量豆子： 迷宫中布满了小豆子，吃掉它们会增加玩家的分数。迷宫的四个特定位置各有一个大豆子（或 "能量豆子"），吃掉它们会使鬼魂变为蓝色，玩家此时可以吃掉蓝色的鬼魂来获取更高的分数。
 
-5. 开发者模式(G): 显示 Ghost 路径，`H`更改 Ghost 模式
+4. 鬼魂： 迷宫中有四只鬼魂，它们分别有不同的名字：Blinky（红色）、Pinky（粉色）、Inky（青色）和 Clyde（橙色）。鬼魂会追逐吃豆人，如果吃豆人被鬼魂碰到，吃豆人会失去一条生命。然而，当吃掉能量豆子后，鬼魂会变为蓝色，此时吃豆人可以吃掉它们。
 
-6. 暂停游戏(P)
+5. 吃掉鬼魂： 当鬼魂变为蓝色时，吃豆人可以吃掉它们，吃掉蓝色鬼魂会增加额外的分数。蓝色鬼魂会在一段时间后恢复成正常状态并重新追逐吃豆人。
 
-7. 排行榜
+6. 生命和得分： 玩家开始游戏时有多条生命。玩家通过吃豆子、吃掉鬼魂和完成特定任务（速通或保留更多生命）来获得分数。游戏的目标是获取尽可能高的分数。
+
+## 游戏截图
+
+<div style="text-align:center">
+  <img src="/assets/images/2023-8-23-ranking_list_2023-8-22.png" alt="排行榜(截至2023年8月22日)">
+  <figcaption>排行榜(截至2023年8月22日)</figcaption>
+</div>
+
+<div style="text-align:center">
+  <img src="/assets/images/2023-8-23-gaming.png" alt="运行时">
+  <figcaption>运行时</figcaption>
+</div>
+
+## 特别鸣谢
+
+特别感谢`单身剑法传人`（[B 站](https://space.bilibili.com/256768793/) & [GitHub](https://github.com/VisualGMQ)）对我的帮助。
+
+感谢以下内测人员的参与与反馈：
+
+```
+colin_008
+satori
+shear
+shear's Queen
+Crystal
+M-thor
+TX7
+Lynn00
+```
+
+## 算法依据
+
+[地图生成](https://shaunlebron.github.io/pacman-mazegen/) (简化了的)
+
+[游戏机制](https://gameinternals.com/understanding-pac-man-ghost-behavior)
 
 ## 更新日志
 
@@ -86,12 +121,6 @@ categories: projects
   - 增加了计时器，根据时间改变 ghost 的行为模式
   - 增加了 inky 和 clyde 的出动条件（默认开局是不出鬼屋的）
   - 为 pacman 添加了动画
-
-## 算法依据
-
-[地图生成](https://shaunlebron.github.io/pacman-mazegen/) (简化了的)
-
-[游戏机制](https://gameinternals.com/understanding-pac-man-ghost-behavior)
 
 ## TODO
 
